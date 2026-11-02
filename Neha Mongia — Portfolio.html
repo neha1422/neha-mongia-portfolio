@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neha Mongia — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#7cc4f2;--sky2:#d6efff;--green:#2f7d3a;--green2:#4f9a3d;--cream:#f7f2e4;--ink:#20262b;--card:rgba(255,255,255,.55);--bd:rgba(255,255,255,.7);--panel:#fffaf0;--muted:#4b5560;--acc:#e8715a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#172019;--ink:#eef2e6;--panel:#1d2a21;--muted:#b3c0b0;--card:rgba(20,32,26,.6);--bd:rgba(255,255,255,.18)}}
+:root[data-theme="dark"]{--cream:#172019;--ink:#eef2e6;--panel:#1d2a21;--muted:#b3c0b0;--card:rgba(20,32,26,.6);--bd:rgba(255,255,255,.18)}
+html{scroll-behavior:smooth;scroll-padding-top:70px;color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.6 "Bricolage Grotesque",system-ui,sans-serif}
+h1,h2,h3{line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.px{font-family:Silkscreen,"Courier New",monospace}
+#load{position:fixed;inset:0;background:var(--sky);display:grid;place-items:center;z-index:99;transition:opacity .6s,visibility .6s;font-size:14px;color:#14304a}
+#load.off{opacity:0;visibility:hidden}
+#load i{display:block;width:160px;height:12px;border:3px solid #14304a;margin:12px auto 0;background:linear-gradient(#14304a,#14304a) 0/0 100% no-repeat;animation:fill .9s steps(8) forwards}
+@keyframes fill{to{background-size:100% 100%}}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:30;padding:calc(8px + env(safe-area-inset-top,0px)) 20px 8px;display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.55);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);color:#20262b;font-size:15px}
+nav.top b{font-weight:800;margin-right:auto}
+nav.top a{text-decoration:none}
+nav.top a:hover{text-decoration:underline}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;background:#20262b;color:#fff!important;text-decoration:none;font-weight:600;border:2px solid #20262b;cursor:pointer;font:inherit;font-weight:600;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:rgba(255,255,255,.7);color:#20262b!important}
+@media(max-width:760px){nav.top a:not(.btn){display:none}}
+#hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:linear-gradient(#4aa8ee,var(--sky) 45%,var(--sky2));color:#14243a}
+.layer{position:absolute;inset:0;width:100%;height:100%;transition:transform .25s ease-out}
+.layer svg{width:100%;height:100%;display:block;shape-rendering:crispEdges}
+.cl{animation:drift 60s linear infinite alternate}
+.cl2{animation-duration:90s}
+@keyframes drift{to{transform:translateX(30px)}}
+.steam{animation:steam 2s ease-in-out infinite}
+@keyframes steam{50%{transform:translateY(-3px);opacity:.3}}
+.sway{animation:sway 4s steps(4) infinite alternate;transform-box:fill-box}
+@keyframes sway{to{transform:translateX(1px)}}
+.hero-in{position:relative;z-index:5;max-width:1200px;margin:0 auto;padding:130px 24px 60px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;min-height:100svh}
+.hero-in h1{font-size:clamp(36px,5.6vw,72px);font-weight:800;letter-spacing:-.03em;max-width:12em}
+.hero-in p{max-width:34em;font-size:19px;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.stat{display:grid;gap:12px;align-content:start;padding-top:40px}
+.gc{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--bd);border-radius:14px;padding:12px 16px;box-shadow:0 8px 24px rgba(20,50,80,.18),inset 0 1px 0 rgba(255,255,255,.8);animation:bob 6s ease-in-out infinite;color:#14243a}
+.gc:nth-child(2n){animation-delay:-2s;margin-left:28px}.gc:nth-child(3n){animation-delay:-4s}
+.gc small{display:block;font-family:Silkscreen,monospace;font-size:12px;color:#2f7d3a}
+@keyframes bob{50%{transform:translateY(-7px)}}
+@media(max-width:860px){.hero-in{grid-template-columns:1fr;padding-top:100px}.stat{padding-bottom:100px}.gc:nth-child(2n){margin-left:0}}
+section.s{max-width:1100px;margin:0 auto;padding:90px 24px}
+h2{font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.lead{color:var(--muted);max-width:40em}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:28px}
+.chip{background:var(--panel);border:2px solid var(--ink);border-radius:4px 14px 4px 14px;padding:14px}
+.chip b{display:block;font-size:22px}
+.tl{border-left:4px solid var(--green);margin-top:34px;padding-left:28px;display:grid;gap:36px}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:-38px;top:6px;width:16px;height:16px;background:var(--acc);border:3px solid var(--cream);outline:3px solid var(--green)}
+.tl h3{font-size:24px}.tl .meta{color:var(--green2);font-family:Silkscreen,monospace;font-size:13px;margin:4px 0 10px;display:block}
+.tl ul,.m ul{padding-left:20px;margin:8px 0}
+.tag{display:inline-block;font-size:13px;background:rgba(47,125,58,.14);color:var(--ink);border-radius:99px;padding:3px 11px;margin:3px 3px 0 0}
+.review{background:var(--acc);color:#fff;font-family:Silkscreen,monospace;font-size:12px;padding:3px 9px;border-radius:3px;display:inline-block}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:34px}
+.pc{background:var(--panel);border:2px solid var(--ink);border-radius:6px 20px 6px 20px;overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;cursor:pointer;color:var(--ink);font:inherit;transition:transform .2s,box-shadow .2s}
+.pc:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--green)}
+.pc svg{width:100%;height:150px;display:block;shape-rendering:crispEdges}
+.pc div{padding:16px 18px 20px}.pc h3{font-size:24px}.pc p{margin:6px 0 10px;color:var(--muted);font-size:15px}
+dialog{border:3px solid var(--ink);border-radius:8px 22px 8px 22px;background:var(--panel);color:var(--ink);max-width:640px;width:calc(100% - 32px);padding:0}
+dialog::backdrop{background:rgba(10,30,50,.6);backdrop-filter:blur(4px)}
+.m{padding:26px}.m svg{width:100%;height:160px;display:block;shape-rendering:crispEdges;margin-bottom:14px;border-radius:8px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.band{background:#e4efd8;color:#20262b}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .band{background:#1d2a21;color:#eef2e6}}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:30px}
+@media(max-width:800px){.res{grid-template-columns:1fr}}
+.paper{background:var(--panel);border:2px solid var(--ink);padding:22px;border-radius:4px}
+.paper svg{width:100%;height:auto}
+.mets{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.mets div{flex:1;min-width:90px;border-top:3px solid var(--green);padding-top:6px}.mets b{font-size:24px;display:block}
+.aw{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:30px}
+.aw div{background:var(--panel);border:2px solid var(--ink);padding:18px;border-radius:14px;position:relative;transition:transform .2s}
+.aw div:hover{transform:rotate(-1deg) scale(1.02)}
+.aw span{font-family:Silkscreen,monospace;font-size:13px;color:var(--acc)}.aw b{display:block;font-size:19px;margin:4px 0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+@media(max-width:800px){.split{grid-template-columns:1fr}}
+.split article{border-top:6px solid var(--green);padding-top:14px}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;margin-top:30px}
+.sk h3{font-size:19px;margin-bottom:8px}
+.sk .tag{background:var(--panel);border:1.5px solid var(--ink);padding:5px 12px;transition:transform .15s,background .15s}
+.sk .tag:hover{transform:translateY(-3px);background:var(--sky)}
+#contact{position:relative;overflow:hidden;background:linear-gradient(#2b3f7a,#c2587a 55%,#ffb36b);color:#fff;min-height:100svh}
+#contact .in{position:relative;z-index:5;max-width:900px;margin:0 auto;padding:110px 24px 220px}
+#contact h2{font-size:clamp(32px,5vw,60px)}
+#contact .cl-list{display:grid;gap:10px;margin-top:26px}
+#contact .cl-list a{background:rgba(255,255,255,.18);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.4);padding:12px 18px;border-radius:12px;text-decoration:none;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;transition:background .2s}
+#contact .cl-list a:hover{background:rgba(255,255,255,.32)}
+#dock{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:40;display:flex;gap:8px;padding:8px 12px;background:rgba(255,255,255,.5);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.8);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+#dock a{position:relative;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#fff;color:#20262b;text-decoration:none;font-family:Silkscreen,monospace;font-size:14px;transition:transform .2s}
+#dock a:hover,#dock a:focus-visible{transform:translateY(-10px) scale(1.2)}
+#dock a::after{content:attr(data-t);position:absolute;bottom:62px;background:#20262b;color:#fff;font:12px "Bricolage Grotesque",sans-serif;padding:3px 9px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s;white-space:nowrap}
+#dock a:hover::after,#dock a:focus-visible::after{opacity:1}
+@media(max-width:560px){#dock a{width:38px;height:38px}#dock{gap:4px;padding:6px 8px}}
+footer{padding:24px;text-align:center;background:#1c1432;color:#d8cfe8;font-size:14px;padding-bottom:100px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="load" role="status"><div class="px">Loading Neha’s world…<i></i></div></div>
+
+<nav class="top" aria-label="Main">
+<b>Neha Mongia — Portfolio</b>
+<a href="#experience">Work</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a>
+<a class="btn" href="mailto:nehamongia14@gmail.com">Email Me</a>
+</nav>
+
+<header id="hero">
+<div class="layer" data-d="6"><svg id="s-cloud" viewBox="0 0 320 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg></div>
+<div class="layer" data-d="10"><svg id="s-city" viewBox="0 0 320 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg></div>
+<div class="layer" data-d="18"><svg id="s-park" viewBox="0 0 320 180" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Pixel-art park with a laptop, notebook and coffee on a desk"></svg></div>
+<div class="hero-in">
+<div>
+<h1>I build intelligent systems that solve real-world problems.</h1>
+<p>Exploring the intersection of Artificial Intelligence, research and engineering — from interpretable machine learning to production-ready GenAI applications.</p>
+<div class="btns"><a class="btn" href="#projects">Explore My Work</a><a class="btn alt" href="#contact">Let’s Connect</a></div>
+</div>
+<div class="stat" aria-label="Status">
+<div class="gc"><small>Researching</small>Explainable Multimodal AI</div>
+<div class="gc"><small>Building</small>RAG &amp; Intelligent Applications</div>
+<div class="gc"><small>Recognised</small>Nutanix NextGen Innovators Scholar</div>
+<div class="gc"><small>Solving</small>400+ DSA Problems</div>
+<div class="gc"><small>Studying</small>B.Tech Computer Science, IGDTUW</div>
+</div>
+</div>
+</header>
+
+<section class="s" id="about">
+<h2>The person behind the projects</h2>
+<p class="lead">I’m Neha Mongia, a Computer Science Engineering student at IGDTUW, passionate about building intelligent, explainable and impactful technology.</p>
+<p class="lead">My interests span Artificial Intelligence, Machine Learning, Generative AI, Retrieval-Augmented Generation and full-stack engineering. I enjoy taking ideas from research and experimentation to practical applications that solve meaningful problems.</p>
+<p class="lead">Beyond technology, I have explored leadership, entrepreneurship, public speaking and community building.</p>
+<div class="chips">
+<div class="chip">B.Tech CSE<b>IGDTUW</b></div><div class="chip">CGPA<b>8.38/10</b></div><div class="chip">Graduation<b>2028</b></div>
+<div class="chip">DSA<b>400+ solved</b></div><div class="chip">Research<b>AI/ML experience</b></div><div class="chip">Recognition<b>Multiple national-level</b></div>
+</div>
+</section>
+
+<div class="band"><section class="s" id="experience">
+<h2>Where I’ve worked</h2>
+<div class="tl">
+<article>
+<h3>Delhi Technological University (DTU)</h3>
+<span class="meta">AI/ML Research Intern · May 2026 – July 2026</span>
+<ul><li>Developed an explainable multimodal AI framework for PCOS detection.</li>
+<li>Built clinical machine learning pipelines involving preprocessing, biomarker engineering and model benchmarking.</li>
+<li>Evaluated Logistic Regression, Deep SVM, Random Forest, XGBoost and Meta-Ensemble approaches.</li>
+<li>Integrated an EfficientNet-B4 ultrasound image-processing pipeline.</li>
+<li>Achieved 94.6% accuracy, 0.95 F1-score and 0.987 ROC-AUC in the reported experiments.</li>
+<li>Research manuscript under review at <i>Biomedical Signal Processing and Control</i>.</li></ul>
+<span class="review">Under Review</span>
+</article>
+<article>
+<h3>IGDTUW</h3>
+<span class="meta">Generative AI &amp; Prompt Engineering Intern · June 2025 – July 2025</span>
+<ul><li>Developed an LLM-powered clinical decision-support system.</li><li>Implemented explainable AI-generated reports.</li><li>Achieved approximately 88% accuracy in the reported evaluation.</li></ul>
+</article>
+</div>
+</section></div>
+
+<section class="s" id="projects">
+<h2>Featured projects</h2>
+<p class="lead">Select a project to open its case study.</p>
+<div class="grid4" id="pgrid"></div>
+</section>
+<dialog id="dlg" aria-label="Project details"><div class="m" id="mbody"></div></dialog>
+
+<div class="band"><section class="s" id="research">
+<h2>Research &amp; technical interests</h2>
+<div class="res">
+<div>
+<p class="lead">Explainable AI, multimodal machine learning, medical AI, meta-learning and ensemble models, retrieval-augmented generation, LLM evaluation, and AI for social impact.</p>
+<p><span class="tag">Explainable AI</span><span class="tag">Multimodal ML</span><span class="tag">Medical AI</span><span class="tag">Meta-Learning &amp; Ensembles</span><span class="tag">RAG</span><span class="tag">LLM Evaluation</span><span class="tag">AI for Social Impact</span></p>
+<h3 style="margin-top:20px">DTU research: explainable multimodal PCOS detection</h3>
+<p><span class="review">Under Review</span> Biomedical Signal Processing and Control. Not yet published.</p>
+</div>
+<div class="paper">
+<svg viewBox="0 0 400 230" role="img" aria-label="Diagram: clinical features and ultrasound feed a meta-ensemble that outputs a PCOS prediction with explanations">
+<g stroke="#2f7d3a" stroke-width="2" fill="none"><path d="M90 45L190 115M90 115L190 115M90 185L190 115M210 115L310 70M210 115L310 160"/></g>
+<g fill="#7cc4f2" stroke="#20262b" stroke-width="2"><rect x="20" y="28" width="90" height="34"/><rect x="20" y="98" width="90" height="34"/><rect x="20" y="168" width="90" height="34"/><rect x="290" y="52" width="100" height="34" fill="#f7f2e4"/><rect x="290" y="142" width="100" height="34" fill="#f7f2e4"/></g>
+<circle cx="200" cy="115" r="26" fill="#e8715a" stroke="#20262b" stroke-width="2"/>
+<g font-size="11" fill="#20262b" font-family="sans-serif" text-anchor="middle"><text x="65" y="49">Clinical data</text><text x="65" y="119">Biomarkers</text><text x="65" y="189">EfficientNet-B4</text><text x="200" y="119">Meta-</text><text x="200" y="131">Ensemble</text><text x="340" y="73">PCOS prediction</text><text x="340" y="163">Explanations</text></g>
+</svg>
+<div class="mets"><div><b>94.6%</b>accuracy</div><div><b>0.95</b>F1-score</div><div><b>0.987</b>ROC-AUC</div></div>
+<small>Reported experiments.</small>
+</div>
+</div>
+</section></div>
+
+<section class="s" id="awards">
+<h2>Achievements &amp; recognition</h2>
+<div class="aw">
+<div><span>Scholarship</span><b>Nutanix NextGen Innovators 2026</b>Selected among 10 scholars across India.</div>
+<div><span>Hackathon</span><b>HackArena X Microsoft</b>Top 20 among 1,000+ participants for LexiBloom.</div>
+<div><span>Runner-Up</span><b>SemiXthon 2026</b>Among 500+ participants, for BioDegradeX.</div>
+<div><span>2nd Place</span><b>4th IoT Research Showcase</b>BioDegradeX.</div>
+<div><span>Top 33</span><b>Smart Delhi Ideathon</b>Among 900+ teams, Zero Waste track.</div>
+<div><span>400+ problems</span><b>Competitive Programming</b>Across LeetCode, GFG and Code360.</div>
+<div><span>MUN</span><b>Best Delegate &amp; Special Mention</b>Across 14+ national and international MUNs.</div>
+</div>
+</section>
+
+<div class="band"><section class="s" id="leadership">
+<h2>Leadership &amp; beyond technology</h2>
+<div class="split">
+<article><h3>Director General — MUN Circle, IGDTUW</h3><ul><li>Led a 200+ member student society.</li><li>Organised large-scale Model United Nations initiatives.</li><li>Developed leadership, public speaking, negotiation and team-management skills.</li></ul></article>
+<article><h3>Director of Corporate Relations — Enactus IGDTUW</h3><ul><li>Managed corporate outreach and sponsorship initiatives.</li><li>Represented IGDTUW at Enactus India Nationals.</li><li>Contributed to entrepreneurship and social-impact initiatives.</li></ul></article>
+</div>
+</section></div>
+
+<section class="s" id="skills">
+<h2>Technical skills</h2>
+<div class="sk" id="skgrid"></div>
+</section>
+
+<section id="contact">
+<div class="layer" data-d="8"><svg id="s-sun" viewBox="0 0 320 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg></div>
+<div class="layer" data-d="0"><svg id="s-sunpark" viewBox="0 0 320 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg></div>
+<div class="in">
+<h2>Have an interesting problem to solve? Let’s build something meaningful.</h2>
+<p style="max-width:36em;font-size:19px">I’m always interested in opportunities involving AI research, intelligent applications, software engineering and impactful technology.</p>
+<div class="cl-list">
+<a href="mailto:nehamongia14@gmail.com"><b>Email</b><span>nehamongia14@gmail.com</span></a>
+<a href="https://linkedin.com/in/neha-mongia-140506nn" target="_blank" rel="noopener"><b>LinkedIn</b><span>linkedin.com/in/neha-mongia-140506nn</span></a>
+<a href="https://github.com/neha1422" target="_blank" rel="noopener"><b>GitHub</b><span>github.com/neha1422</span></a>
+<a href="https://leetcode.com/u/neha1422/" target="_blank" rel="noopener"><b>LeetCode</b><span>leetcode.com/u/neha1422</span></a>
+<a href="https://codolio.com/profile/neha1422" target="_blank" rel="noopener"><b>Codolio</b><span>codolio.com/profile/neha1422</span></a>
+</div>
+</div>
+</section>
+<footer>© 2026 Neha Mongia</footer>
+
+<nav id="dock" aria-label="Dock">
+<a href="#hero" data-t="Home" aria-label="Home">H</a><a href="#experience" data-t="Work" aria-label="Work">W</a><a href="#projects" data-t="Projects" aria-label="Projects">P</a><a href="#research" data-t="Research" aria-label="Research">R</a><a href="#awards" data-t="Awards" aria-label="Awards">A</a><a href="#skills" data-t="Skills" aria-label="Skills">S</a><a href="#contact" data-t="Contact" aria-label="Contact">C</a>
+</nav>
+
+<script>
+(function(){
+var seed=7;function r(){seed=(seed*16807)%2147483647;return seed/2147483647}
+function R(x,y,w,h,c,x2){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+c+'"'+(x2||'')+'/>'}
+function cloud(x,y,c){return '<g class="cl'+(x%2?' cl2':'')+'">'+R(x+3,y-2,6,2,c)+R(x,y,14,2,c)+R(x+2,y+2,12,2,c,' opacity=".85"')+'</g>'}
+function sky(id,o){var s='';for(var i=0;i<o.clouds.length;i++)s+=cloud(o.clouds[i][0],o.clouds[i][1],o.cc);document.getElementById(id).innerHTML=s}
+function city(id,c1,c2,win){var s='',x=-4;while(x<324){var w=10+Math.floor(r()*8),h=22+Math.floor(r()*36),c=r()>.5?c1:c2;s+=R(x,125-h,w,h+2,c);for(var wy=125-h+3;wy<120;wy+=5)for(var wx=x+2;wx<x+w-2;wx+=4)if(r()>.55)s+=R(wx,wy,2,2,win);x+=w+1}document.getElementById(id).innerHTML=s}
+function tree(x,y,g1,g2){return R(x+3,y+8,2,7,'#6b4423')+R(x,y+3,8,6,g1)+R(x+1,y,6,4,g2)+R(x+2,y-2,4,2,g2,' class="sway"')}
+function park(id,o){var s=R(0,118,320,62,o.g1)+R(0,118,320,2,o.g3);for(var y=124;y<180;y+=6)s+=R(0,y,320,2,o.g2,' opacity=".5"');
+s+=R(120,150,60,30,o.path,' opacity=".6"');
+[8,40,92,236,276,300].forEach(function(x,i){s+=tree(x,104+(i%3)*4,o.t1,o.t2)});
+var f=o.fl;for(var i=0;i<90;i++){s+=R(Math.floor(r()*318),128+Math.floor(r()*50),2,2,f[i%f.length])}
+if(o.desk){s+=R(196,150,100,6,'#8a5a32')+R(200,156,4,18,'#6b4423')+R(288,156,4,18,'#6b4423');
+s+=R(212,128,38,22,'#2b3340')+R(215,131,32,16,'#0f2a3a');for(var i=0;i<5;i++)s+=R(218,134+i*3,6+((i*7)%14),1,i%2?'#7cc4f2':'#8be28b');s+=R(208,150,46,3,'#cfd6dc')+R(262,142,22,8,'#f7f2e4')+R(262,142,3,8,'#e8715a')+R(268,145,12,1,'#9aa')+R(268,147,9,1,'#9aa');
+s+=R(150,138,10,12,'#20262b',' opacity="0"');s+=R(284,144,6,6,'#fff')+R(290,146,2,3,'#fff')+'<g class="steam">'+R(285,139,1,3,'#fff')+R(288,138,1,3,'#fff')+'</g>'}
+document.getElementById(id).innerHTML=s}
+sky('s-cloud',{cc:'#fff',clouds:[[20,20],[110,34],[190,14],[250,40],[60,60]]});
+city('s-city','#7fa6c9','#6a92b8','#d6efff');
+park('s-park',{g1:'#4f9a3d',g2:'#3f8a33',g3:'#79c25a',path:'#e6d49a',t1:'#2f7d3a',t2:'#3f9a46',fl:['#ff8fb3','#ffd84d','#fff','#c58bff'],desk:1});
+document.getElementById('s-sun').innerHTML='';
+seed=11;city('s-sun','#5a3a73','#6c4a86','#ffd27a');
+document.getElementById('s-sun').insertAdjacentHTML('afterbegin',R(140,50,40,40,'#ffd27a')+R(146,44,28,4,'#ffd27a'));
+seed=5;park('s-sunpark',{g1:'#2a5a3a',g2:'#234b31',g3:'#4a8a52',path:'#c58a5a',t1:'#1d4a2b',t2:'#2a6a3a',fl:['#ff9a8f','#ffd27a','#e8d0ff']});
+/* project art */
+var PAL={a:'#3f9a46',b:'#f7f2e4',c:'#7cc4f2',d:'#e8715a',e:'#20262b',f:'#ffd84d',g:'#8a5a32',h:'#c58bff','.':'#2f7d3a'};
+var ART={
+k:['................','..f.......c.c...','.fff....c.c.c...','..f......ccc....','bbbbbbb..c.c.c..','beeeeeb....c....','bbbbbbb.........','aaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaa'],
+r:['cccccccccccccccc','cbbbbbbbbbbbbbbc','cbaaaaaaaadbbbbc','cbaaaaaaaaabbbbc','cbbbaaaaabbbbbbc','cbbbbbaadbbbbbbc','cbbbbbbbbbbddbbc','cbbbbbbbbbbbbbbc','cbbbbbbbbbbbbbbc','cccccccccccccccc'],
+l:['ffffffffffffffff','fbbbbbbbbbbbbbbf','fbeeeeebbbhhhbbf','fbbbbbbbbbhhhbbf','fbeeeeeeebbbbbbf','fbbbbbbbbbddbbbf','fbeeeeebbbddbbbf','fbbbbbbbbbbbbbbf','fbbbbbbbbbbbbbbf','ffffffffffffffff'],
+b:['cccccccccccccccc','cccccccdccccccdc','ccccccccdcccccdc','cccceeeeeccccccc','ccceaaaaaeccccdc','ccceaaaaaeccccdc','cccceeeeeccccccc','gggggggggggggggg','gggggggggggggggg','gggggggggggggggg']};
+function art(k){var s='<svg viewBox="0 0 16 10" preserveAspectRatio="xMidYMid slice" aria-hidden="true">';ART[k].forEach(function(row,y){for(var x=0;x<16;x++)s+=R(x,y,1,1,PAL[row[x]])});return s+'</svg>'}
+var P=[
+{k:'k',n:'KrishiNyay AI',d:'A multilingual RAG-powered agricultural intelligence platform.',b:['Source-grounded responses using government agricultural resources.','MiniLM embeddings, ChromaDB and hybrid retrieval.','Workflow-based routing and Gemini-powered generation.','250+ multilingual evaluation suite.','Prometheus and Grafana observability.'],t:['RAG','MiniLM','ChromaDB','Gemini','Prometheus','Grafana'],l:[['GitHub','https://github.com/neha1422/KrishiNyay'],['Demo','https://drive.google.com/file/d/1D40GksksFM2ZqF7tTfEZarYmhbSFJyvG/view?usp=sharing']]},
+{k:'r',n:'RakshakApp',d:'An AI-powered multilingual disaster preparedness platform.',b:['SOS and emergency assistance.','AI voice assistance and multilingual interaction.','Punjab GIS-based risk maps.','Gamified disaster preparedness learning.','Admin dashboards and emergency communication workflows.'],t:['Google Maps','Firebase Auth','PostgreSQL','Leaflet.js','Twilio','Whisper ASR','gTTS'],l:[['GitHub','https://github.com/neha1422/RakshakApp'],['Live','https://rakshakapp.vercel.app/']]},
+{k:'l',n:'LexiBloom',d:'An AI accessibility platform designed for dyslexic and ADHD learners.',b:['Text-to-speech and speech-to-text.','OCR-based text extraction.','Eye-gaze tracking.','Dyslexia-friendly virtual keyboard.','Accessible, personalised learning experience.','HackArena X Microsoft: Top 20 among 1,000+ participants.'],t:['TTS','STT','OCR','Eye-gaze tracking'],l:[['GitHub','https://github.com/neha1422/lexibloom']]},
+{k:'b',n:'BioDegradeX',d:'An IoT-powered smart compost decomposition monitoring system.',b:['Sensor-based compost monitoring.','Environmental parameter tracking.','Smart sustainability-focused technology.','Runner-Up, SemiXthon 2026.','2nd Place, 4th IoT Research Showcase.'],t:['IoT','Sensors','Sustainability'],l:[]}];
+var g=document.getElementById('pgrid'),dlg=document.getElementById('dlg'),mb=document.getElementById('mbody');
+function tags(a){return a.map(function(x){return '<span class="tag">'+x+'</span>'}).join('')}
+P.forEach(function(p,i){var b=document.createElement('button');b.className='pc';b.innerHTML=art(p.k)+'<div><h3>'+p.n+'</h3><p>'+p.d+'</p>'+tags(p.t.slice(0,4))+'</div>';
+b.onclick=function(){mb.innerHTML=art(p.k)+'<h3 style="font-size:28px">'+p.n+'</h3><p>'+p.d+'</p><ul>'+p.b.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+tags(p.t)+'<div class="links">'+p.l.map(function(x){return '<a class="btn" target="_blank" rel="noopener" href="'+x[1]+'">'+x[0]+'</a>'}).join('')+'<button class="btn alt" onclick="document.getElementById(\'dlg\').close()">Close</button></div>';dlg.showModal()};g.appendChild(b)});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+var SK=[['Programming','C, C++, Python, JavaScript, MySQL, HTML5, CSS3'],['Web Development','React.js, Node.js, Express.js'],['AI/ML','Machine Learning, XGBoost, Random Forest, SVM, EfficientNet, Meta-Ensemble Learning, Explainable AI, SHAP, LIME'],['Generative AI','LLMs, RAG, Prompt Engineering, MiniLM, ChromaDB, Gemini, Whisper'],['Tools & Platforms','Git, GitHub, VS Code, Jupyter Notebook, Google Colab, Tableau, Prometheus, Grafana'],['Core Coursework','DSA, OOP, DBMS, Operating Systems, Computer Networks, DAA, IoT']];
+document.getElementById('skgrid').innerHTML=SK.map(function(s){return '<div><h3>'+s[0]+'</h3>'+tags(s[1].split(', '))+'</div>'}).join('');
+/* parallax + loader */
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!rm)addEventListener('mousemove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;document.querySelectorAll('#hero .layer').forEach(function(l){var d=+l.dataset.d;l.style.transform='translate('+(-x*d)+'px,'+(-y*d/2)+'px) scale(1.04)'})});
+setTimeout(function(){document.getElementById('load').classList.add('off')},rm?100:1100);
+})();
+</script>
+</body>
+</html>
